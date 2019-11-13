@@ -5,7 +5,6 @@ import {Carousel} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 import Navigation from './components/Navigation';
-import GestionPrimates from './components/GestionPrimates';
 import FooterPage from './components/Footer'
 
 

@@ -5,6 +5,10 @@
   color: white;
 }
 
+.border-right {
+  border-right:1px solid #333;
+}
+
 /*!
  * Primitive UI | MIT License
  *

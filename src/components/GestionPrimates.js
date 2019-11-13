@@ -1,7 +1,5 @@
 import React, { useState, Fragment, useEffect } from 'react';
-// import ListePrimateTable from './components/ListePrimateTable';
-// import NewPrimateTable from './components/NewPrimateTable';
-// import EditPrimateTable from './components/EditPrimateTable';
+import Navigation from './Navigation';
 
 const GestionPrimates = () => {
 
@@ -35,11 +33,13 @@ const GestionPrimates = () => {
 
             props.NewPrimate(primate)
             setPrimate(initialFormState)
-          }}
+          }} className="form-inline"
         >
-          <label>Name</label>
-          <input type="text" name="name" value={primate.name} onChange={handleInputChange} />
-          <button>Créer primate</button>
+          <div className="form-group">
+            <label>Nom</label>
+            <input type="text" name="name" value={primate.name} onChange={handleInputChange} />
+            <button>Créer primate</button>
+          </div>
         </form>
       )
     }
@@ -63,9 +63,9 @@ const GestionPrimates = () => {
             props.updatePrimate(primate.id, primate)
           }}
         >
-          <label>Name</label>
+          <label>Nom</label>
           <input type="text" name="name" value={primate.name} onChange={handleInputChange} />
-          <button>Update primate</button>
+          <button>Modifier primate</button>
           <button onClick={() => props.setEditing(false)} className="button muted-button">
             Cancel
           </button>
@@ -135,13 +135,15 @@ const GestionPrimates = () => {
   }
 
     return (
-      <div className="container">
+      <div>
+      <Navigation />
+      <div className="container text-center my-3">
         <h1>Gestion des primates</h1>
-        <div className="flex-row">
-          <div className="flex-large">
+        <hr/>
+        <div className="row">
+          <div className="col-md-6 border-right">
             {editing ? (
               <Fragment>
-                <h2>Modifier ceprimate</h2>
                 <EditPrimateTable
                   editing={editing}
                   setEditing={setEditing}
@@ -151,16 +153,15 @@ const GestionPrimates = () => {
               </Fragment>
             ) : (
               <Fragment>
-                <h2>Creer primate</h2>
                 <NewPrimateTable NewPrimate={NewPrimate} />
               </Fragment>
             )}
-            <div className="flex-large">
-              <h2>Liste des primates</h2>
-              <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
-            </div>
+          </div>
+          <div className="col-md-6">
+            <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
           </div>
         </div>
+      </div>
       </div>
     )
 }
