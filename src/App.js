@@ -6,6 +6,23 @@ import {Navbar, Nav, NavDropdown, Carousel} from 'react-bootstrap';
 import ListePrimateTable from './components/ListePrimateTable';
 import NewPrimateTable from './components/NewPrimateTable';
 import EditPrimateTable from './components/EditPrimateTable';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+const routes = [
+  {
+    path: "/",
+    component: App
+  },
+  {
+    path: "/gestion",
+    component: ListePrimateTable,
+  }
+];
 
 function App() {
 
@@ -55,7 +72,7 @@ function App() {
             <Nav className="mr-auto">
               <Nav.Link href="#home">Accueil</Nav.Link>
               <Nav.Link href="#link">Ajouter un primate</Nav.Link>
-              <Nav.Link href="#link">Liste des primates</Nav.Link>
+              <Nav.Link href="/gestion">Liste des primates</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
