@@ -5,6 +5,7 @@ import {Navbar, Nav, Carousel} from 'react-bootstrap';
 import ListePrimateTable from './components/ListePrimateTable';
 import NewPrimateTable from './components/NewPrimateTable';
 import EditPrimateTable from './components/EditPrimateTable';
+import FooterPage from './components/Footer'
 import {
   Link
 } from "react-router-dom";
@@ -138,6 +139,7 @@ Nunc lobortis nibh sed dui accumsan varius. Etiam vitae eros nec ante molestie v
           </div>
         </div>
       </div>
+      <FooterPage color="cyan"/>
     </div>
   );
 }

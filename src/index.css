@@ -44,3 +44,7 @@ code {
 .title-description{
   text-align: center;
 }
+
+.footer{
+  min-height: 200px;
+}
