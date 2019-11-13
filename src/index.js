@@ -9,6 +9,7 @@ import {
     Route,
     Switch
   } from 'react-router-dom'
+import GestionPrimates from './components/GestionPrimates';
 
 const Root = () => {
     return (
