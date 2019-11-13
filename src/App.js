@@ -1,8 +1,7 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Carousel} from 'react-bootstrap';
-import { Link } from "react-router-dom";
 
 import Navigation from './components/Navigation';
 import FooterPage from './components/Footer'
@@ -54,7 +53,7 @@ function App() {
         </Carousel>
         <div className="row row-description">
           <div className="col-6">
-            <img className="img-description" src="./primate1.jpg"/>
+            <img className="img-description" src="./primate1.jpg" alt="img"/>
           </div>
           <div className="col-6">
             <h1 className="title-description">Description détaillée</h1>

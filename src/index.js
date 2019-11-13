@@ -10,7 +10,6 @@ import {
     Switch
   } from 'react-router-dom'
 
-
 const Root = () => {
     return (
         <Router>
