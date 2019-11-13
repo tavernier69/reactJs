@@ -17,7 +17,7 @@ const NewPrimateTable = props => {
         event.preventDefault()
         if (!primate.name) return
 
-        props.addPrimate(primate)
+        props.NewPrimate(primate)
         setPrimate(initialFormState)
       }}
     >
