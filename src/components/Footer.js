@@ -3,10 +3,10 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPage = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+    <MDBFooter color="blue" className="font-small pt-4 mt-4 bg-dark">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="6">
+          <MDBCol className="col-md-5 offset-md-1">
             <h5 className="title">Primate Land</h5>
             <p>
               Site sur les primates et autres formes chelou !!!
@@ -14,12 +14,12 @@ const FooterPage = () => {
           </MDBCol>
           <MDBCol md="6">
             <h5 className="title">Liens</h5>
-            <ul>
+            <ul className="ul-list">
               <li className="list-unstyled">
-                <a href="#!">Accueil</a>
+                <a href="/">Accueil</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Gestion des primates</a>
+                <a href="/gestion">Gestion des primates</a>
               </li>
             </ul>
           </MDBCol>

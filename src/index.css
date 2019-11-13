@@ -9,9 +9,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container{
+  min-height: 71vh;
+}
+
+.page-footer, .title, .list-unstyled a, .carousel-caption h3{
+  color: #FFFFFF !important;
+}
+
+.ul-list{
+  margin-left: -40px;
 }
 
 .nav-link, .navbar-brand{
@@ -35,16 +48,20 @@ code {
 .img-description{
     width: 100%;
     object-fit: cover;
-    margin-top: 65px;
+    margin-bottom: 20px;
 }
 .text-description{
   text-align: justify;
 }
 
 .title-description{
-  text-align: center;
+  margin-left: 7%;
 }
 
 .footer{
   min-height: 200px;
+}
+
+.p-carousel, .h3-carousel{
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }

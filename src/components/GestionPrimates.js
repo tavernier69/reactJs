@@ -1,5 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import Navigation from './Navigation';
+import FooterPage from './Footer'
 
 const GestionPrimates = () => {
 
@@ -162,7 +163,9 @@ const GestionPrimates = () => {
           </div>
         </div>
       </div>
+      <FooterPage/>
       </div>
+      
     )
 }
 
