@@ -1,6 +1,10 @@
 import React, { useState, Fragment } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Carousel} from 'react-bootstrap';
+import Navigation from './components/Navigation';
+import GestionPrimates from './components/GestionPrimates';
+import { Link } from "react-router-dom";
 import {Navbar, Nav, Carousel} from 'react-bootstrap';
 import ListePrimateTable from './components/ListePrimateTable';
 import NewPrimateTable from './components/NewPrimateTable';
@@ -13,55 +17,10 @@ import {
 
 function App() {
 
-
-  const NewPrimate = primate => {
-    primate.id = primates.length + 1
-    setPrimates([...primates, primate])
-  }
-
-  const deletePrimate = id => {
-    setPrimates(primates.filter(primate => primate.id !== id))
-  }
-
-  const primatesData = [
-    { id: 1, name: 'Tania'},
-    { id: 2, name: 'Craig'},
-    { id: 3, name: 'Ben'},
-  ]
-
-  const [primates, setPrimates] = useState(primatesData)
-
-  const [editing, setEditing] = useState(false)
-  const initialFormState = { id: null, name: ''}
-  const [currentPrimate, setCurrentPrimate] = useState(initialFormState)
-
-  const editRow = primate => {
-    setEditing(true)
-
-    setCurrentPrimate({ id: primate.id, name: primate.name})
-  }
-
-  const updatePrimate = (id, updatedPrimate) => {
-    setEditing(false)
-
-    setPrimates(primates.map(primate => (primate.id === id ? updatePrimate : primate)))
-  }
-
   return (
 
     <div className="App">
-      <header className="App-header">
-        <Navbar bg="dark" expand="lg">
-          <Navbar.Brand href="#home">Primate Land</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Accueil</Nav.Link>
-              <Nav.Link><Link to="/gestion"> Gestion des primates </Link></Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </header>
+      <Navigation />
       <div className="container">
         <Carousel>
           <Carousel.Item>
