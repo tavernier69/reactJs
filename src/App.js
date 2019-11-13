@@ -5,6 +5,14 @@ import {Carousel} from 'react-bootstrap';
 import Navigation from './components/Navigation';
 import GestionPrimates from './components/GestionPrimates';
 import { Link } from "react-router-dom";
+import {Navbar, Nav, Carousel} from 'react-bootstrap';
+import ListePrimateTable from './components/ListePrimateTable';
+import NewPrimateTable from './components/NewPrimateTable';
+import EditPrimateTable from './components/EditPrimateTable';
+import {
+  Link
+} from "react-router-dom";
+
 
 function App() {
 
