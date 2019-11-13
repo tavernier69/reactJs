@@ -65,33 +65,6 @@ Nunc lobortis nibh sed dui accumsan varius. Etiam vitae eros nec ante molestie v
           </div>
         </div>
       </div>
-      <div className="container">
-        <h1>Gestion des primates</h1>
-        <div className="flex-row">
-          <div className="flex-large">
-            {editing ? (
-              <Fragment>
-                <h2>Modifier ceprimate</h2>
-                <EditPrimateTable
-                  editing={editing}
-                  setEditing={setEditing}
-                  currentPrimate={currentPrimate}
-                  updatePrimate={updatePrimate}
-                />
-              </Fragment>
-            ) : (
-              <Fragment>
-                <h2>Creer primate</h2>
-                <NewPrimateTable NewPrimate={NewPrimate} />
-              </Fragment>
-            )}
-            <div className="flex-large">
-              <h2>Liste des primates</h2>
-              <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
-            </div>
-          </div>
-        </div>
-      </div>
       <FooterPage color="cyan"/>
     </div>
   );

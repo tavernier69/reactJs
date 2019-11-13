@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import EditPrimateTable from './components/EditPrimateTable';
 import {
     BrowserRouter as Router,
     Route,
     Switch
   } from 'react-router-dom'
+import GestionPrimates from './components/GestionPrimates';
 
 
 const Root = () => {
@@ -16,7 +16,7 @@ const Root = () => {
         <Router>
           <Switch>
             <Route exact path='/' component={App} />
-            <Route exact path='/gestion' component={EditPrimateTable} />
+            <Route exact path='/gestion' component={GestionPrimates} />
           </Switch>
         </Router>
     )
