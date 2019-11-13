@@ -36,11 +36,10 @@ const GestionPrimates = () => {
             setPrimate(initialFormState)
           }} className="form-inline"
         >
-          <div className="form-group">
-            <label>Nom</label>
-            <input type="text" name="name" value={primate.name} onChange={handleInputChange} />
-            <button>Créer primate</button>
+          <div className="form-group mx-3 mt-2">
+            <input type="text" placeholder="Nom.." name="name" value={primate.name} onChange={handleInputChange} />
           </div>
+          <button className="btn btn-primary">Créer primate</button>
         </form>
       )
     }
@@ -60,14 +59,12 @@ const GestionPrimates = () => {
         <form
           onSubmit={event => {
             event.preventDefault()
-
             props.updatePrimate(primate.id, primate)
           }}
         >
-          <label>Nom</label>
           <input type="text" name="name" value={primate.name} onChange={handleInputChange} />
-          <button>Modifier primate</button>
-          <button onClick={() => props.setEditing(false)} className="button muted-button">
+          <button className="btn btn-primary mx-1">Modifier primate</button>
+          <button onClick={() => props.setEditing(false)} className="btn btn-warning muted-button mx-1">
             Cancel
           </button>
         </form>
@@ -78,7 +75,7 @@ const GestionPrimates = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Nom</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -86,19 +83,19 @@ const GestionPrimates = () => {
           {props.primates.length > 0 ? (
             props.primates.map(primate => (
               <tr key={primate.id}>
-                <td>{primate.name}</td>
-                <td>
+                <td className="text-center">{primate.name}</td>
+                <td className="text-center">
                   <button
                     onClick={() => {
                       props.editRow(primate)
                     }}
-                    className="button muted-button"
+                    className="btn btn-primary muted-button mx-1"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => props.deletePrimate(primate.id)}
-                    className="button muted-button"
+                    className="btn btn-danger muted-button mx-1"
                   >
                     Delete
                   </button>
@@ -123,7 +120,7 @@ const GestionPrimates = () => {
   const updatePrimate = (id, updatedPrimate) => {
     setEditing(false)
 
-    setPrimates(primates.map(primate => (primate.id === id ? updatePrimate : primate)))
+    setPrimates(primates.map(primate => (primate.id === id ? updatedPrimate : primate)))
   }
 
   const NewPrimate = primate => {
