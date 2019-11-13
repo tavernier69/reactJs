@@ -1,12 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, NavDropdown, Carousel} from 'react-bootstrap';
+import ListePrimateTable from './components/ListePrimateTable';
+import NewPrimateTable from './components/NewPrimateTable';
+import EditPrimateTable from './components/EditPrimateTable';
 
 function App() {
+
+
+  const NewPrimate = primate => {
+    primate.id = primates.length + 1
+    setPrimates([...primates, primate])
+  }
+
+  const deletePrimate = id => {
+    setPrimates(primates.filter(primate => primate.id !== id))
+  }
+
+  const primatesData = [
+    { id: 1, name: 'Tania'},
+    { id: 2, name: 'Craig'},
+    { id: 3, name: 'Ben'},
+  ]
+
+  const [primates, setPrimates] = useState(primatesData)
+
+  const [editing, setEditing] = useState(false)
+  const initialFormState = { id: null, name: ''}
+  const [currentPrimate, setCurrentPrimate] = useState(initialFormState)
+
+  const editRow = primate => {
+    setEditing(true)
+
+    setCurrentPrimate({ id: primate.id, name: primate.name})
+  }
+
+  const updatePrimate = (id, updatedPrimate) => {
+    setEditing(false)
+
+    setPrimates(primates.map(primate => (primate.id === id ? updatePrimate : primate)))
+  }
+
   return (
+
     <div className="App">
+    <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
       <header className="App-header">
       <Navbar bg="dark" expand="lg">
         <Navbar.Brand href="#home">Primate Land</Navbar.Brand>
@@ -15,13 +55,7 @@ function App() {
           <Nav className="mr-auto">
             <Nav.Link href="#home">Accueil</Nav.Link>
             <Nav.Link href="#link">Ajouter un primate</Nav.Link>
-            <NavDropdown title="Liste des primates" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="#link">Liste des primates</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -61,7 +95,7 @@ function App() {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel> 
+</Carousel>
       </header>
     </div>
   );
