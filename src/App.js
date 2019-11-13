@@ -6,22 +6,9 @@ import ListePrimateTable from './components/ListePrimateTable';
 import NewPrimateTable from './components/NewPrimateTable';
 import EditPrimateTable from './components/EditPrimateTable';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
-const routes = [
-  {
-    path: "/",
-    component: App
-  },
-  {
-    path: "/gestion",
-    component: ListePrimateTable,
-  }
-];
 
 function App() {
 
@@ -69,7 +56,7 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="/">Accueil</Nav.Link>
-              <Nav.Link href="/gestion">Gestion des primates</Nav.Link>
+              <Nav.Link><Link to="/gestion"> Gestion des primates </Link></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
